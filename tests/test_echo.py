@@ -86,12 +86,10 @@ class Tester(unittest.TestCase):
         self.assertEquals(result, "hello!")
 
     def test_no_args(self):
-        """Tests what happens after no text is entered"""
-        process = subprocess.Popen(
-            ["python", "./echo.py"],
-            stdout=subprocess.PIPE)
-        stdout, _ = process.communicate()
-        self.assertEquals(stdout, "usage: echo.py [-h] [-u] [-l] [-t] text\n")
+        """Testing NO args"""
+        args = ["Hello!"]
+        result = echo.main(args)
+        self.assertEquals(result, 'Hello!')
 
 
 if __name__ == '__main__':

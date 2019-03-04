@@ -22,14 +22,13 @@ def create_parser():
 
 def main(args):
     """Implementation of echo"""
-
     parser = create_parser()
-    args = parser.parse_args(args)
-    text = args.text
-
     if not args:
         parser.print_usage()
         sys.exit()
+        
+    args = parser.parse_args(args)
+    text = args.text
 
     if args.upper:
         text = text.upper()
